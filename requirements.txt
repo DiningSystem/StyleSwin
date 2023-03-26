@@ -2,7 +2,7 @@ torch>=1.6.0
 lmdb
 timm
 scipy
-sklearn
+scikit-learn
 einops
 tensorflow==1.15.0
 tqdm
