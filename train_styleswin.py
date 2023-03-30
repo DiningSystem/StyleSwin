@@ -24,6 +24,7 @@ except ImportError:
 import time
 
 from dataset.dataset import MultiResolutionDataset
+from dataset.custom_dataset import MyDataset
 from models.discriminator import Discriminator
 from models.generator import Generator
 from utils import fid_score
@@ -486,10 +487,7 @@ if __name__ == "__main__":
             ]
         )
     train_image_paths = [] #to store image paths in list
-    classes = [] #to store class values
-    a=1
-    for data_path in glob.glob(args.path + '/*'):
-        classes.append(a) 
+    for data_path in glob.glob(args.path + '/*'): 
         train_image_paths.append(glob.glob(data_path + '/*'))
 
     if args.lmdb:
