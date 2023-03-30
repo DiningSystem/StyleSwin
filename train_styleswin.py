@@ -476,6 +476,7 @@ if __name__ == "__main__":
                 
                 transforms.ToTensor(),
                 transforms.Lambda(lambda x: torch.cat([x, x, x], 0)),
+                transforms.Lambda(lambda x: torch.unsqueeze(x, 0)),
                 normalize
             ]
         )
@@ -486,6 +487,7 @@ if __name__ == "__main__":
                 
                 transforms.ToTensor(),
                 transforms.Lambda(lambda x: torch.cat([x, x, x], 0)),
+                transforms.Lambda(lambda x: torch.unsqueeze(x, 0)),
                 normalize
             ]
         )
