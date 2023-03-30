@@ -471,6 +471,7 @@ if __name__ == "__main__":
             [
                 transforms.Resize((args.size, args.size)),
                 transforms.RandomHorizontalFlip(),
+                transforms.Lambda(lambda x: x.repeat(3,1,1))
                 transforms.ToTensor(),
                 normalize
             ]
@@ -479,6 +480,7 @@ if __name__ == "__main__":
         transform = transforms.Compose(
             [
                 transforms.Resize((args.size, args.size)),
+                transforms.Lambda(lambda x: x.repeat(3,1,1))
                 transforms.ToTensor(),
                 normalize
             ]
