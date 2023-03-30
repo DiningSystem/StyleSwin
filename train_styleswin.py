@@ -475,7 +475,7 @@ if __name__ == "__main__":
                 transforms.RandomHorizontalFlip(),
                 
                 transforms.ToTensor(),
-                transforms.Lambda(lambda x: x.repeat(3,1,1)),
+                transforms.Lambda(lambda x: torch.cat([x, x, x], 0)),
                 normalize
             ]
         )
@@ -485,7 +485,7 @@ if __name__ == "__main__":
                 transforms.Resize((args.size, args.size)),
                 
                 transforms.ToTensor(),
-                transforms.Lambda(lambda x: x.repeat(3,1,1)),
+                transforms.Lambda(lambda x: torch.cat([x, x, x], 0)),
                 normalize
             ]
         )
