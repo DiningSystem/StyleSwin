@@ -330,7 +330,7 @@ if __name__ == "__main__":
     parser.add_argument("--print_freq", type=int, default=1000)
     parser.add_argument("--save_freq", type=int, default=20000)
     parser.add_argument("--eval_freq", type=int, default=50000)
-    parser.add_argument('--workers', default=8, type=int, help='Number of workers')
+    parser.add_argument('--workers', default=2, type=int, help='Number of workers')
 
     parser.add_argument('--checkpoint_path', default='/tmp', type=str, help='Save checkpoints')
     parser.add_argument('--sample_path', default='/tmp', type=str, help='Save sample')
