@@ -488,9 +488,9 @@ if __name__ == "__main__":
             ]
         )
     train_image_paths = [] #to store image paths in list
-    for data_path in glob.glob(args.path + '/*'): 
-        train_image_paths.append(glob.glob(data_path + '/*'))
-        print(train_image_paths)
+    for data_path in glob.glob(args.path + '/*.jpg'): 
+        train_image_paths.append(data_path)
+        #print(train_image_paths)
 
     if args.lmdb:
         dataset = MultiResolutionDataset(args.path, transform, args.size)
