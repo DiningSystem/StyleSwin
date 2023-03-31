@@ -116,8 +116,16 @@ def get_activations(files, model, batch_size=50, dims=2048, device='cpu', num_wo
         print(('Warning: batch size is bigger than the data size. '
                'Setting batch size to data size'))
         batch_size = len(files)
+    
+    transform = TF.Compose(
+            [
+                transforms.Resize((args.size, args.size)),
+                
+                transforms.ToTensor()
+            ]
+        )
 
-    dataset = ImagePathDataset(files, transforms=TF.ToTensor())
+    dataset = ImagePathDataset(files, transforms=transform)
     dataloader = torch.utils.data.DataLoader(dataset,
                                              batch_size=batch_size,
                                              shuffle=False,
