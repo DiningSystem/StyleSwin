@@ -491,16 +491,16 @@ if __name__ == "__main__":
                 normalize
             ]
         )
-    train_image_paths = [] #to store image paths in list
-    for data_path in glob.glob(args.path + '/*.jpg'): 
-        train_image_paths.append(data_path)
+    #train_image_paths = [] #to store image paths in list
+    #for data_path in glob.glob(args.path + '/*.jpg'): 
+     #   train_image_paths.append(data_path)
         #print(train_image_paths)
 
     if args.lmdb:
         dataset = MultiResolutionDataset(args.path, transform, args.size)
     else:
-        #dataset = datasets.ImageFolder(root=args.path, transform=transform)
-        dataset = MyDataset(train_image_paths, transform=transform)       
+        dataset = datasets.ImageFolder(root=args.path, transform=transform)
+        #dataset = MyDataset(train_image_paths, transform=transform)       
     loader = data.DataLoader(
         dataset,
         batch_size=args.batch,
