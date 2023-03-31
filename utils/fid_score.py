@@ -58,7 +58,7 @@ from utils.inception import InceptionV3
 parser = ArgumentParser(formatter_class=ArgumentDefaultsHelpFormatter)
 parser.add_argument('--batch-size', type=int, default=50,
                     help='Batch size to use')
- parser.add_argument("--size", type=int, default=256)
+parser.add_argument("--size", type=int, default=256)
 parser.add_argument('--num-workers', type=int, default=8,
                     help='Number of processes to use for data loading')
 parser.add_argument('--device', type=str, default=None,
