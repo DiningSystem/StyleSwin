@@ -120,7 +120,7 @@ def get_activations(files, model, batch_size=50, dims=2048, device='cpu', num_wo
     
     transform = TF.Compose(
             [
-                TF.Resize((1024, 1024)),
+                TF.Resize((256, 256)),
                 
                 TF.ToTensor()
             ]
